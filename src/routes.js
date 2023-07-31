@@ -5,7 +5,10 @@ import RoutesPrivate from "./RotaPrivada";
 
 const Rout = () => {
     <BrowserRouter>
-        <RoutesPrivate exact path="/" component={Home}></RoutesPrivate>
-        <Route exact path="/login" component={Login}></Route>
+        <Switch>
+            <RoutesPrivate exact path="/" element={<Home></Home>}></RoutesPrivate>
+            <Route exact path="/login" element={<Login></Login>}></Route>
+        </Switch>
     </BrowserRouter>
 }
+export default Rout
