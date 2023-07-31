@@ -30,7 +30,7 @@ position:fixed;
 }
 .back .direitos p{
   margin-top: 60px;
-  color: white;
+  color: rgb(255, 255, 255);
 text-align:center;
 }
 .form{
@@ -70,6 +70,8 @@ text-align:center;
   flex-direction: column;
 }
 .input p{
+  font-weight: 500;
+  color: rgba(150, 150, 150, 0.753);
   transition: all ease 0.2s;
   pointer-events: none;
   margin-left: -227px;
@@ -96,6 +98,7 @@ text-align:center;
 }
 .input input:focus + p, .input input:not(:placeholder-shown)+p{
   background: white;
+  color: black;
   margin-top: -50px;
   margin-left: -251px;
   font-size: 15px;
