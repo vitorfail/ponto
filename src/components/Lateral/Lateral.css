@@ -16,6 +16,14 @@
     transition: all ease 0.2s;
     height: 40px;
 }
+.lateral .logo{
+    width: 100%;
+    background: rgb(39, 39, 39);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
 .lateral .items a:hover{
     color: var(--vermelho);
     background: white;
