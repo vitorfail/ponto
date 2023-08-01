@@ -1,10 +1,21 @@
+:root{
+  --vermelho:rgb(26, 187, 26);
+}
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.tudo{
+.tudo {
+  height: 100%;
+  width: 100%;
   position: absolute;
   display: flex;
+}
+.items{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

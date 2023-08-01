@@ -1,18 +1,22 @@
 .lateral{
     color: white;
-    background: red;
+    background: var(--vermelho);
     height: 100%;
     width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+}
+.lateral .items{
+    width: 100%;
 }
 .lateral .items a{
+    width: 100%;
     transition: all ease 0.2s;
     height: 40px;
 }
 .lateral .items a:hover{
-    color: red;
+    color: var(--vermelho);
     background: white;
 }
