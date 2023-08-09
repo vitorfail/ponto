@@ -1,8 +1,9 @@
 .back{
-  background: linear-gradient(to bottom right, rgb(99, 99, 22), rgb(46, 46, 23));
+  background: rgb(51, 51, 51);
   width:100vw;
   height:100vh;
   display:flex;
+  position: fixed;
   align-items: center;
   justify-content: center;
 }
@@ -39,10 +40,11 @@ text-align:center;
   justify-content: center;
   width: 320px;
   min-width:420px;
-  height: 340px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: auto;
   background: white;
   display:block;
-  border-radius: 10px;
 }
 .form button{
   font-size:16px;
@@ -103,13 +105,23 @@ text-align:center;
   margin-left: -251px;
   font-size: 15px;
 }
+.input input:not(:placeholder-shown){
+  background: rgba(71, 71, 71, 0.24);
+}
 .entrada{
   align-items: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: auto;
+  height: 400px;
+}
+.entrada img{
+  padding: 12px;
+  height: 150px;
+  width: auto;
+  border-radius: 50%;
+  border: 2px solid rgb(43, 43, 43);
 }
 .input input.logando{
   cursor:unset;
@@ -141,12 +153,18 @@ text-align:center;
   75% {margin-left: -13px;}
   100% {margin-left: 0;}
 }
-@media screen and (max-width: 640px){
+@media screen and (max-width: 740px){
   .form{
       align-items: center;
       justify-content: center;
       background: white;
       display:block;
+      width: 100%;
       border-radius: 10px;        
+  }
+  .back .direitos {
+    justify-content: end;
+    display: flex;
+    width: 100%;
   }
 }
