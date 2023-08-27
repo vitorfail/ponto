@@ -1,7 +1,7 @@
 import "./Cards.css"
 import People from "../../images/people.png"
 import Dinner from "../../images/dinner.png"
-import Ferias from "../../images/ferias.png"
+import Work from "../../images/work.png"
 export default function Cards(props){
     return(
         <div className="cards">
@@ -14,17 +14,17 @@ export default function Cards(props){
             </div>
             <div className="card">
                 <div className="info">
-                    <p>{props.content[2]}</p>
-                    <h4>Em Almoço</h4>
+                    <p>{props.content[1]}</p>
+                    <h4>Trabalhando</h4>
                 </div>
                 <img src={Dinner} alt="people"></img>
             </div>
             <div className="card">
                 <div className="info">
-                    <p>{props.content[1]}</p>
-                    <h4>Trabalhando</h4>
+                    <p>{props.content[2]}</p>
+                    <h4>Almoço</h4>
                 </div>
-                <img src={Ferias} alt="people"></img>
+                <img src={Work} alt="people"></img>
             </div>
 
         </div>

@@ -1,0 +1,56 @@
+.funcionarios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    width: 100%;
+}
+.funcionarios .func{
+    margin-top: 6px;
+    margin-bottom: 6px;
+    display: flex;
+    width: 87%;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.308);
+}.funcionarios .func p{
+    font-size: 15px;
+    font-weight: 600;
+    padding: 4px;
+    width: auto;
+}
+.funcionarios .status{
+    display: flex;
+    align-items: center;
+}
+.funcionarios .status .Trabalhando{
+    background: green;
+}
+.funcionarios .status .Almoço{
+    background: yellow;
+}
+.funcionarios .status .Saiu{
+    background: red;
+}
+.funcionarios .status .Trabalhando, .funcionarios .status .Almoço, .funcionarios .status .Saiu{
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 12px;
+    height: 12px;
+    transition: ease all 0.2s;
+    animation: ponto 2s infinite alternate;
+}
+
+@keyframes ponto {
+    0%{
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.541);
+    }
+    50%{
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.541);
+    }
+    100%{
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.541);
+    }
+}
