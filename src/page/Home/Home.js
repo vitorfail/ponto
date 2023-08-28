@@ -4,9 +4,12 @@ import Lateral from "../../components/Lateral/Lateral"
 import "./Home.css"
 import Axios from "../../Axios"
 import { useEffect, useState } from "react"
+import Loading from "../../components/Loading/Loading"
+import  PopupOk  from "../../components/PopupOK/PopupOk"
 
 export default function Home(){
     const [total, settotal] = useState("")
+    const [isLoading, setLoading] = useState("fundo")
     const [trabalhando, settrabalhando] = useState("")
     const [almoco, setalmoco] = useState("")
     const [ dados, setdados] = useState([])
@@ -26,9 +29,15 @@ export default function Home(){
             }).catch( error => {
                 console.log(error)
             })
-    
         }
         iniciar()
+        setTimeout(() => {
+            setLoading("fundo desaparecer")
+        }, 1000);
+        setTimeout(() => {
+            setLoading("fundo sumir");
+          }, 1000);
+
         }, [])
     function status(s){
         if(s === "hora_saida_almoco"){
@@ -43,19 +52,24 @@ export default function Home(){
     }
     return(
         <div className="tudo">
+            <Loading>{isLoading}</Loading>
             <Lateral></Lateral>
             <Conteudo>
                 <Cards content={[total,trabalhando,almoco]}></Cards>
                 <div className="funcionarios">
-                {dados.map((item, index) => (
-                        <div key={index} className="func">
-                            <p>{item.user}</p>
-                            <p className="status">
-                                <div className={status(item.status)}></div>
-                                {status(item.status)}
-                            </p>
-                        </div>
-                    ))}
+                    <div className="container">
+                        {dados.map((item, index) => (
+                                <div key={index} className="func">
+                                    <div className="alarme">
+                                        <div className={status(item.status)}></div>
+                                        <p>{item.user.toUpperCase()}</p>
+                                    </div>
+                                    <p className="status">
+                                        {status(item.status)}
+                                    </p>
+                                </div>
+                        ))}
+                    </div>
                 </div>
             </Conteudo>
 

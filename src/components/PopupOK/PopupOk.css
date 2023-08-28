@@ -1,0 +1,45 @@
+.popup_ok{
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: rgba(0, 0, 0, 0.397);
+}
+.popup_ok.show{
+    display: flex;
+}
+.popup_ok .menu{
+    width: 500px;
+    height: 400px;
+    background: white;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.267);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.popup_ok .menu img{
+    width: 100px;
+}
+.popup_ok p{
+    font-size: 20px;
+}
+.popup_ok button{
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: rgb(5, 64, 255);
+}
+.popup_ok button:hover{
+    border: 1px solid rgb(5, 64, 255);
+    color: rgb(5, 64, 255);
+    background: white;
+    cursor: pointer;
+}

@@ -12,9 +12,16 @@
     width: 100%;
 }
 .lateral .items a{
+    display: flex;
+    align-items: center;
     width: 100%;
     transition: all ease 0.2s;
     height: 40px;
+}
+.lateral .items a img{
+    margin-right: 9px;
+    width: 20px;
+    height: 20px;
 }
 .lateral .logo{
     width: 100%;
@@ -27,4 +34,5 @@
 .lateral .items a:hover{
     color: var(--vermelho);
     background: white;
+    cursor: pointer;
 }

@@ -4,36 +4,50 @@
     align-items: center;
     overflow-y: auto;
     width: 100%;
+    padding-left: 5.8vw;
+    padding-right: 5.8vw;
+}
+.funcionarios .container{
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.308);
+    width: 100%;
+    height: 100%;
+    background: white;
 }
 .funcionarios .func{
     margin-top: 6px;
     margin-bottom: 6px;
     display: flex;
-    width: 87%;
+    width: 100%;
     height: auto;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.308);
-}.funcionarios .func p{
-    font-size: 15px;
-    font-weight: 600;
-    padding: 4px;
-    width: auto;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.171);
 }
-.funcionarios .status{
+.funcionarios .func .alarme{
     display: flex;
     align-items: center;
 }
-.funcionarios .status .Trabalhando{
-    background: green;
+.funcionarios .func p{
+    font-size: 15px;
+    font-weight: 300;
+    padding: 4px;
+    width: 200px;
 }
-.funcionarios .status .Almoço{
+.funcionarios .func .status{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.funcionarios .func .Trabalhando{
+    background: rgb(0, 150, 0);
+}
+.funcionarios .func .Almoço{
     background: yellow;
 }
-.funcionarios .status .Saiu{
-    background: red;
+.funcionarios .func .Saiu{
+    background: rgb(255, 42, 42);
 }
-.funcionarios .status .Trabalhando, .funcionarios .status .Almoço, .funcionarios .status .Saiu{
+.funcionarios .func .Trabalhando, .funcionarios .func .Almoço, .funcionarios .func .Saiu{
     border-radius: 50%;
     margin-left: 5px;
     margin-right: 5px;

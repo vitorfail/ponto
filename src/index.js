@@ -5,12 +5,14 @@ import App from './App';
 import { createRoot } from 'react-dom/client';
 import Rout from './routes';
 import reportWebVitals from './reportWebVitals';
-import Login from './page/Login/Login';
+import { StoreContext } from './components/Store/Context'; 
 const container = document.getElementById('root');
 
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 root.render(<Rout/>);root.render(<React.StrictMode>
-    <App/>
+    <StoreContext>
+        <App/>
+    </StoreContext>
 </React.StrictMode>);
 
 

@@ -32,10 +32,12 @@ export default function Login(){
             setmostrar('aviso')
             Axios.post('api/login_admin', {user: usuario, senha: senha, cod: cod})
             .then(res =>{
+                console.log(res.data)
                 if(res.data.result.status === 'ok'){
                     settoken(res.data.result.token)
                     setTimeout(() =>{ 
                                         history.push('/')
+                                        window.location.reload()
                                     }, 3000);
                     
                 }

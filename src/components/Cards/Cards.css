@@ -6,6 +6,8 @@
     justify-content: space-evenly;
     height: 200px;
     width: 100%;
+    transition: all ease 0.2s;
+    animation: aparecer 2.5s;
 }
 .cards .card{
     color: white;
@@ -39,4 +41,12 @@
 }
 .cards .card h4{
     font-weight: 200;
+}
+@keyframes aparecer {
+    0%{
+        margin-top:230px;
+    }
+    100%{
+        margin-top:25px;
+    }
 }
