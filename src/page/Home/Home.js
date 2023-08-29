@@ -41,7 +41,7 @@ export default function Home(){
         }, [])
     function status(s){
         if(s === "hora_saida_almoco"){
-            return "Almoçando"
+            return "Almocando"
         }
         if(s === "horaEntrada" || s ==="hora_entrada_almoco"){
             return "Trabalhando"

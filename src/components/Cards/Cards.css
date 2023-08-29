@@ -1,10 +1,10 @@
 .cards{
-    margin-top: 25px;
+    margin-top: 105px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    height: 200px;
+    height: auto;
     width: 100%;
     transition: all ease 0.2s;
     animation: aparecer 2.5s;

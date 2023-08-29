@@ -6,6 +6,7 @@
     width: 100%;
     padding-left: 5.8vw;
     padding-right: 5.8vw;
+    padding-bottom: 70px;
 }
 .funcionarios .container{
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.308);
@@ -41,13 +42,13 @@
 .funcionarios .func .Trabalhando{
     background: rgb(0, 150, 0);
 }
-.funcionarios .func .Almoço{
+.funcionarios .func .Almocando{
     background: yellow;
 }
 .funcionarios .func .Saiu{
     background: rgb(255, 42, 42);
 }
-.funcionarios .func .Trabalhando, .funcionarios .func .Almoço, .funcionarios .func .Saiu{
+.funcionarios .func .Trabalhando, .funcionarios .func .Almocando, .funcionarios .func .Saiu{
     border-radius: 50%;
     margin-left: 5px;
     margin-right: 5px;
