@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import Ok from "../../images/ok.png"
 import "./PopupOk.css"
+import "../animation.css"
 import { Authcontext } from "../Store/Context"
 export default function PopupOk(){
     const {popup_ok, setpopup_ok} = useContext(Authcontext)

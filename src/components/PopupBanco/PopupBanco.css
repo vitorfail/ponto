@@ -1,4 +1,4 @@
-.popup_ok{
+.popup_banco{
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -8,14 +8,15 @@
     display: none;
     background: rgba(0, 0, 0, 0.397);
 }
-.popup_ok.show{
+.popup_banco.show{
     display: flex;
 }
-.popup_ok .menu{
+.popup_banco .menu{
+    border-radius: 20px;
     transition: all ease-in-out 0.2s;
     animation: popup 0.7s;
-    width: 500px;
-    height: 400px;
+    width: 600px;
+    height: 500px;
     background: white;
     box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.267);
     display: flex;
@@ -23,13 +24,28 @@
     align-items: center;
     flex-direction: column;
 }
-.popup_ok .menu img{
+.popup_banco .menu img{
     width: 100px;
 }
-.popup_ok p{
-    font-size: 20px;
+.popup_banco p{
+    font-size: 30px;
+    font-weight: 200;
+    color: rgb(42, 42, 255);
+    border-bottom: 1px solid rgba(42, 42, 255, 0.479);
+    text-align: center;
+    width: 100%;
+    height: 10%;
 }
-.popup_ok button{
+.popup_banco .horas{
+    height: 50%;
+}
+.popup_banco .fechar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+}
+.popup_banco button{
     width: 100px;
     height: 40px;
     font-size: 20px;
@@ -37,11 +53,11 @@
     border: none;
     outline: none;
     border-radius: 5px;
-    background: rgb(5, 64, 255);
+    background: rgb(218, 12, 12);
 }
-.popup_ok button:hover{
-    border: 1px solid rgb(5, 64, 255);
-    color: rgb(5, 64, 255);
+.popup_banco button:hover{
+    border: 1px solid rgb(218, 12, 12);
+    color: rgb(218, 12, 12);
     background: white;
     cursor: pointer;
 }

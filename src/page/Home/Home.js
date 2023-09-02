@@ -3,11 +3,12 @@ import Conteudo from "../../components/Conteudo/Conteudo"
 import Lateral from "../../components/Lateral/Lateral"
 import "./Home.css"
 import Axios from "../../Axios"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import Loading from "../../components/Loading/Loading"
-import  PopupOk  from "../../components/PopupOK/PopupOk"
+import { Authcontext } from "../../components/Store/Context"
 
 export default function Home(){
+    const {setpopup_banco} = useContext(Authcontext)
     const [total, settotal] = useState("")
     const [isLoading, setLoading] = useState("fundo")
     const [trabalhando, settrabalhando] = useState("")
@@ -16,7 +17,6 @@ export default function Home(){
     useEffect( ()=>{
         const iniciar = async() => {
             Axios.post("api/home").then( res =>{
-            console.log(res.data.result.funcionarios)
               if(res.data.result.status === "ok"){
                 settotal(res.data.result.total)
                 settrabalhando(res.data.result.trabalhando)
@@ -67,6 +67,7 @@ export default function Home(){
                                     <p className="status">
                                         {status(item.status)}
                                     </p>
+                                    <button onClick={() => setpopup_banco("popup_banco show")}>Banco de Horas</button>
                                 </div>
                         ))}
                     </div>
