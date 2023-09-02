@@ -5,13 +5,14 @@ import "../animation.css"
 import Axios from "../../Axios"
 import { Authcontext } from "../Store/Context"
 export default function PopupBanco(){
-    const {popup_banco, setpopup_banco} = useContext(Authcontext)
+    const {popup_banco, setpopup_banco, setload} = useContext(Authcontext)
     const [ ano, setano] = useState(0)
     const [ mes, setmes] = useState(0)
     const [ horas, sethoras] = useState(0)
     const [ minutos, setminutos] = useState(0)
     const [ segundos, setsegundos] = useState(0)
     function pesquisa(){
+        setload("spin show")
         Axios.post('api/banco', {mes:mes, ano:ano}).then(res =>{
             if(res.data.result.status === "ok"){
                 var h = res.data.result.horas.diferenca_de_datas["hours"] !== undefined? res.data.result.horas.diferenca_de_datas.hours:'0'
@@ -21,18 +22,19 @@ export default function PopupBanco(){
                 setminutos(m)
                 setsegundos(s)
             }
+            setload("spin")
         })
         .catch(err => {
-
+            setload("spin show")
         })
     }
     return(
         <div className={popup_banco}>
             <div className="menu">
-                <p>Banco de horas</p>
                 <div className="horas">
                     <div className="pesquisa">
                         <select onChange={(e) => setano(e.target.value)} className="ano">
+                            <option value={"TODOS"}>TODOS</option>
                             <option value={1999}>1999</option>
                             <option value={2000}>2000</option>
                             <option value={2001}>2001</option>
@@ -76,6 +78,7 @@ export default function PopupBanco(){
                             <option value={2040}>2040</option>
                         </select>
                         <select onChange={(e) => setmes(e.target.value)} className="mes">
+                            <option value={"TODOS"}>TODOS</option>
                             <option value={0}>JANEIRO</option>
                             <option value={1}>FEVEREIRO</option>
                             <option value={2}>MARÇO</option>
@@ -89,6 +92,7 @@ export default function PopupBanco(){
                             <option value={10}>NOVEMBRO</option>
                             <option value={11}>DEZEMBRO</option>
                         </select>
+                        <button onClick={() => pesquisa()}>PESQUISAR</button>
                     </div>
                     <p>{horas+" Horas, "+minutos+" Minutos, "+segundos+" Segundos"}</p>
                 </div>

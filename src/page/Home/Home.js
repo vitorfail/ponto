@@ -8,7 +8,7 @@ import Loading from "../../components/Loading/Loading"
 import { Authcontext } from "../../components/Store/Context"
 
 export default function Home(){
-    const {setpopup_banco} = useContext(Authcontext)
+    const {setpopup_banco, setload} = useContext(Authcontext)
     const [total, settotal] = useState("")
     const [isLoading, setLoading] = useState("fundo")
     const [trabalhando, settrabalhando] = useState("")
@@ -27,6 +27,7 @@ export default function Home(){
                 console.log(res.data)
               }  
             }).catch( error => {
+                setload("popup_internet show")
                 console.log(error)
             })
         }
