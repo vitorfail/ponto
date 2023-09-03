@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import Ok from "../../images/ok.png"
+import Ok from "../../images/correto.png"
 import "./PopupOk.css"
 import "../animation.css"
 import { Authcontext } from "../Store/Context"
@@ -9,7 +9,7 @@ export default function PopupOk(){
         <div className={popup_ok}>
             <div className="menu">
                 <img src={Ok}></img>
-                <p>Cadastro feito com sucesso</p>
+                <h3>Cadastro feito com sucesso</h3>
                 <button onClick={() => setpopup_ok("popup_ok")}>OK</button>
             </div>
         </div>

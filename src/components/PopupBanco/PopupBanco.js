@@ -5,7 +5,7 @@ import "../animation.css"
 import Axios from "../../Axios"
 import { Authcontext } from "../Store/Context"
 export default function PopupBanco(){
-    const {popup_banco, setpopup_banco, setload} = useContext(Authcontext)
+    const {popup_banco, setpopup_banco, setload, func} = useContext(Authcontext)
     const [ ano, setano] = useState(0)
     const [ mes, setmes] = useState(0)
     const [ horas, sethoras] = useState(0)
@@ -14,23 +14,28 @@ export default function PopupBanco(){
     function pesquisa(){
         setload("spin show")
         Axios.post('api/banco', {mes:mes, ano:ano}).then(res =>{
-            if(res.data.result.status === "ok"){
-                var h = res.data.result.horas.diferenca_de_datas["hours"] !== undefined? res.data.result.horas.diferenca_de_datas.hours:'0'
-                var m = res.data.result.horas.diferenca_de_datas["minutes"] !==undefined? res.data.result.horas.diferenca_de_datas.minutes: '0'
-                var s = res.data.result.horas.diferenca_de_datas["seconds"]!== undefined? res.data.result.horas.diferenca_de_datas.seconds:'0' 
-                sethoras(h)
-                setminutos(m)
-                setsegundos(s)
+            console.log(res.data)
+            if(res.data.result.horas.length>0){
+                if(res.data.result.status === "ok"){
+                    var h = res.data.result.horas[0].diferenca_de_datas["hours"] !== undefined? res.data.result.horas[0].diferenca_de_datas.hours:'0'
+                    var m = res.data.result.horas[0].diferenca_de_datas["minutes"] !==undefined? res.data.result.horas[0].diferenca_de_datas.minutes: '0'
+                    var s = res.data.result.horas[0].diferenca_de_datas["seconds"]!== undefined? res.data.result.horas[0].diferenca_de_datas.seconds:'0' 
+                    sethoras(h)
+                    setminutos(m)
+                    setsegundos(s)
+                }    
             }
             setload("spin")
         })
         .catch(err => {
-            setload("spin show")
+            console.log(err)
+            setload("spin")
         })
     }
     return(
         <div className={popup_banco}>
             <div className="menu">
+                <p className="titulo">Banco de Horas de {func}</p>
                 <div className="horas">
                     <div className="pesquisa">
                         <select onChange={(e) => setano(e.target.value)} className="ano">
@@ -79,18 +84,18 @@ export default function PopupBanco(){
                         </select>
                         <select onChange={(e) => setmes(e.target.value)} className="mes">
                             <option value={"TODOS"}>TODOS</option>
-                            <option value={0}>JANEIRO</option>
-                            <option value={1}>FEVEREIRO</option>
-                            <option value={2}>MARÇO</option>
-                            <option value={3}>ABRIL</option>
-                            <option value={4}>MAIO</option>
-                            <option value={5}>JUNHO</option>
-                            <option value={6}>JULHO</option>
-                            <option value={7}>AGOSTO</option>
-                            <option value={8}>SETEMBRO</option>
-                            <option value={9}>OUTUBRO</option>
-                            <option value={10}>NOVEMBRO</option>
-                            <option value={11}>DEZEMBRO</option>
+                            <option value={1}>JANEIRO</option>
+                            <option value={2}>FEVEREIRO</option>
+                            <option value={3}>MARÇO</option>
+                            <option value={4}>ABRIL</option>
+                            <option value={5}>MAIO</option>
+                            <option value={6}>JUNHO</option>
+                            <option value={7}>JULHO</option>
+                            <option value={8}>AGOSTO</option>
+                            <option value={9}>SETEMBRO</option>
+                            <option value={10}>OUTUBRO</option>
+                            <option value={11}>NOVEMBRO</option>
+                            <option value={12}>DEZEMBRO</option>
                         </select>
                         <button onClick={() => pesquisa()}>PESQUISAR</button>
                     </div>

@@ -12,23 +12,26 @@
     display: flex;
 }
 .popup_internet .menu{
-    border-radius: 20px;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.5);
     transition: all ease-in-out 0.2s;
     animation: popup 0.7s;
     width: 600px;
     height: 500px;
     background: white;
-    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.267);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
 }
 .popup_internet .menu img{
-    width: 100px;
+    animation: ico 0.7s;
+    width: 150px;
+    height: 150px;
 }
 .popup_internet p{
-    font-size: 25px;
+    padding: 9px;
+    font-size: 20px;
     font-weight: 200;
     color: rgb(44, 44, 44);
     text-align: center;

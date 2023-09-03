@@ -12,15 +12,15 @@
     display: flex;
 }
 .popup_banco .menu{
-    border-radius: 20px;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.5);
     transition: all ease-in-out 0.2s;
     animation: popup 0.7s;
     width: 600px;
     height: 500px;
     background: white;
-    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.267);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
@@ -39,21 +39,43 @@
     height: 50%;
 }
 .popup_banco .pesquisa{
+    margin-top: 50px;
+    border: none;
+    outline: none;
     width: 100%;
     display: flex;
     justify-content: center;
 }
+.popup_banco .pesquisa button{
+    border: none;
+    outline: none;
+    color: white;
+    background: rgb(16, 151, 16);
+    font-size: 15px;
+    width: 46%;
+}
 .popup_banco select{
+    font-size: 20px;
+    width: 27%;
     color: white;
     background: rgb(73, 73, 255);
+}
+.popup_banco .titulo{
+    font-weight: 500;
+    top: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    color: white;
+    background: rgb(72, 72, 255);
 }
 .popup_banco .fechar{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 30%;
+    margin-top: 45px;
 }
-.popup_banco button{
+.popup_banco .fechar button{
     width: 100px;
     height: 40px;
     font-size: 20px;
@@ -63,9 +85,15 @@
     border-radius: 5px;
     background: rgb(218, 12, 12);
 }
-.popup_banco button:hover{
+.popup_banco .fechar button:hover{
     border: 1px solid rgb(218, 12, 12);
     color: rgb(218, 12, 12);
     background: white;
     cursor: pointer;
+}
+.popup_banco .pesquisa button:hover{
+    cursor: pointer;
+    color:rgb(16, 151, 16);
+    background: white;
+    border: 1px solid rgb(16, 151, 16);
 }

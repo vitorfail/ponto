@@ -17,17 +17,23 @@
     width: 500px;
     height: 400px;
     background: white;
-    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.267);
+    border-radius: 15px;
+    box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
 }
 .popup_ok .menu img{
+    animation: ico 0.7s;
     width: 100px;
 }
-.popup_ok p{
-    font-size: 20px;
+.popup_ok h3{
+    padding: 15px 55px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(114, 114, 114);
+    font-weight: 500;
+    font-size: 25px;
 }
 .popup_ok button{
     width: 100px;

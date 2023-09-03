@@ -8,7 +8,7 @@ import Loading from "../../components/Loading/Loading"
 import { Authcontext } from "../../components/Store/Context"
 
 export default function Home(){
-    const {setpopup_banco, setload} = useContext(Authcontext)
+    const {setpopup_banco, setload, setpopup_internet, setfunc} = useContext(Authcontext)
     const [total, settotal] = useState("")
     const [isLoading, setLoading] = useState("fundo")
     const [trabalhando, settrabalhando] = useState("")
@@ -27,8 +27,7 @@ export default function Home(){
                 console.log(res.data)
               }  
             }).catch( error => {
-                setload("popup_internet show")
-                console.log(error)
+                setpopup_internet("popup_internet show")
             })
         }
         iniciar()
@@ -68,7 +67,7 @@ export default function Home(){
                                     <p className="status">
                                         {status(item.status)}
                                     </p>
-                                    <button onClick={() => setpopup_banco("popup_banco show")}>Banco de Horas</button>
+                                    <button onClick={() => {setpopup_banco("popup_banco show"); setfunc(item.user.toUpperCase())}}>Banco de Horas</button>
                                 </div>
                         ))}
                     </div>
