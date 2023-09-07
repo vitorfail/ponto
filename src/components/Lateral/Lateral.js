@@ -18,7 +18,7 @@ export default  function Lateral(){
         <div className="lateral">
             <div className="logo">TOQUE DE OURO</div>
             <div className="items">
-                <a><img src={Home}/>Home</a>
+                <a onClick={() => history.push('/')}><img src={Home}/>Home</a>
                 <a onClick={() => history.push("/cadastro")}><img src={Cad}/>Cadastro</a>
                 <a onClick={() => sair()}><img src={Exit}/>Sair</a>
             </div>

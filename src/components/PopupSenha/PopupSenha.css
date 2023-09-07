@@ -1,0 +1,74 @@
+.popup_senha{
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: rgba(0, 0, 0, 0.397);
+}
+.popup_senha.show{
+    display: flex;
+}
+.popup_senha .menu{
+    border-radius: 15px;
+    box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.5);
+    transition: all ease-in-out 0.2s;
+    animation: popup 0.7s;
+    width: 600px;
+    height: 500px;
+    background: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.popup_senha .menu img{
+    animation: ico 0.7s;
+    width: 150px;
+    height: 150px;
+}
+.popup_senha p{
+    padding: 9px;
+    font-size: 20px;
+    font-weight: 200;
+    color: rgb(44, 44, 44);
+    text-align: center;
+    width: 100%;
+    height: 10%;
+}
+.popup_senha .horas{
+    height: 50%;
+}
+.popup_senha .pesquisa{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.popup_senha select{
+    color: white;
+    background: rgb(73, 73, 255);
+}
+.popup_senha .fechar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+}
+.popup_senha button{
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: rgb(218, 12, 12);
+}
+.popup_senha button:hover{
+    border: 1px solid rgb(218, 12, 12);
+    color: rgb(218, 12, 12);
+    background: white;
+    cursor: pointer;
+}

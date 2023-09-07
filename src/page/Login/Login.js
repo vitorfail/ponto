@@ -1,9 +1,10 @@
-import { useState} from 'react';
+import { useContext, useState} from 'react';
 import Axios from '../../Axios'
 import './Login.css';
 import './Login.scss';
 import Icon from "./people.png"
 import { useHistory} from 'react-router-dom';
+import { Authcontext } from '../../components/Store/Context';
 
 
 export default function Login(){
@@ -12,13 +13,16 @@ export default function Login(){
     const [cod, setcod] = useState(null);
     const [ mostrar, setmostrar] = useState('aviso');
     const [conteudoError, setconteudoError] = useState('Usuário ou senha incorretos')
+    const [ esperar, setesperar] = useState("esperar")
     const history = useHistory();
     const [ logando, setlogando] = useState('');
     const [darespaco, setdarespaco] = useState('');
+    const {setpopup_senha} = useContext(Authcontext)
     const settoken = (t) => {
         localStorage.setItem('token_jwt', t);
     }
     function login_func(){
+        setesperar("esperar show")
         if(senha === null || usuario === null || senha === '' || usuario === ''){
             setconteudoError('Preencha a senha e o usuário')
             setdarespaco('espaco')
@@ -32,20 +36,22 @@ export default function Login(){
             setmostrar('aviso')
             Axios.post('api/login_admin', {user: usuario, senha: senha, cod: cod})
             .then(res =>{
-                console.log(res.data)
                 if(res.data.result.status === 'ok'){
-                    settoken(res.data.result.token)
-                    setTimeout(() =>{ 
-                                        history.push('/')
-                                        window.location.reload()
-                                    }, 3000);
-                    
-                }
-                else{
-
+                    if("er" in res.data.result){
+                        setesperar("esperar")
+                        setpopup_senha("popup_senha show")
+                    }
+                    else{
+                        settoken(res.data.result.token)
+                        setTimeout(() =>{ 
+                                            history.push('/')
+                                            window.location.reload()
+                                        }, 3000);    
+                    }                    
                 }
             })
             .catch(error => {
+                setesperar("esperar")
                 setconteudoError('Verifique sua internet e tente novamente')
                 setdarespaco('espaco')
                 setlogando('');
@@ -62,6 +68,22 @@ export default function Login(){
     return(
         <div>
             <div className='back'>
+                <div className={esperar}>
+                        <div className="lds-spinner">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                </div>
                 <div className='form'>
                     <div className='entrada'>
                         <img src={Icon}></img>
