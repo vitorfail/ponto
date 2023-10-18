@@ -8,7 +8,7 @@ export default function PopupOk(){
     return(
         <div className={popup_ok}>
             <div className="menu">
-                <img src={Ok}></img>
+                <img alt="ok" src={Ok}></img>
                 <h3>Cadastro feito com sucesso</h3>
                 <button onClick={() => setpopup_ok("popup_ok")}>OK</button>
             </div>

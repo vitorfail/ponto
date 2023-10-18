@@ -13,6 +13,7 @@ export default function Cadastro(){
     const {setpopup_ok, setload} = useContext(Authcontext)
     const [isLoading, setLoading] = useState("fundo")
     const [user, setuser] = useState("")
+    const [email, setemail] = useState("")
     const [nivel, setnivel] = useState(0)
     useEffect( ()=>{
         setTimeout(() => {
@@ -25,7 +26,7 @@ export default function Cadastro(){
         }, [])
     function cadastrar(){
         setload("spin show")
-        Axios.post("api/cadastro", {user: String(user), nivel:nivel})
+        Axios.post("api/cadastro", {user: String(user), email:email, nivel:nivel})
         .then(res =>{
             console.log(res.data)
             if(res.data.result.status === "ok"){
@@ -43,8 +44,12 @@ export default function Cadastro(){
                 <div className="cadastro">
                     <div className="cad">
                         <div className="info">
-                            <p>Nome</p>
+                            <p>Nome:</p>
                             <input onChange={(e) => setuser(e.target.value)}></input>
+                        </div>
+                        <div className="info">
+                            <p>Email:</p>
+                            <input onChange={(e) => setemail(e.target.value)}></input>
                         </div>
                         <div className="info">
                             <p>Nivel</p>

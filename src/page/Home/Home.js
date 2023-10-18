@@ -8,7 +8,7 @@ import Loading from "../../components/Loading/Loading"
 import { Authcontext } from "../../components/Store/Context"
 
 export default function Home(){
-    const {setpopup_banco, setload, setpopup_internet, setfunc} = useContext(Authcontext)
+    const {setpopup_banco, setpopup_internet, setfunc} = useContext(Authcontext)
     const [total, settotal] = useState("")
     const [isLoading, setLoading] = useState("fundo")
     const [trabalhando, settrabalhando] = useState("")
@@ -38,7 +38,7 @@ export default function Home(){
             setLoading("fundo sumir");
           }, 1000);
 
-        }, [])
+        }, [setpopup_internet])
     function status(s){
         if(s === "hora_saida_almoco"){
             return "Almocando"

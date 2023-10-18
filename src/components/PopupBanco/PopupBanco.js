@@ -1,5 +1,4 @@
 import { useContext, useState } from "react"
-import Ok from "../../images/ok.png"
 import "./PopupBanco.css"
 import "../animation.css"
 import Axios from "../../Axios"
