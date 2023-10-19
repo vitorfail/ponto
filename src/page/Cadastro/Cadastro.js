@@ -26,7 +26,7 @@ export default function Cadastro(){
         }, [])
     function cadastrar(){
         setload("spin show")
-        Axios.post("api/cadastro", {user: String(user), email:email, nivel:nivel})
+        Axios.post("api/cadastro", {user: String(user), email:email, nivel:nivel, senha:""})
         .then(res =>{
             console.log(res.data)
             if(res.data.result.status === "ok"){
